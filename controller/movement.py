@@ -32,7 +32,7 @@ def move_bottom(degree):
 
 @movement.route('/move_right/<degree>')
 def move_right(degree):
-    AS.move_right(180) # plus more down
+    AS.move_right(degree) # plus more down
     print("Move claw to: " + str(degree))
     return redirect(url_for('app.index'))
 
@@ -45,7 +45,7 @@ def move_claw(degree):
 
 @movement.route('/move_left/<degree>')
 def move_left(degree):
-    AS.move_left(0)
+    AS.move_left(degree)
     print("Move claw to: " + str(degree))
     return redirect(url_for('app.index'))
 

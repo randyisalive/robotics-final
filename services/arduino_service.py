@@ -1,6 +1,5 @@
 import pyfirmata
 import time
-import sys
 from configuration import check_os
 from services.turn_class import turn
 
@@ -35,7 +34,7 @@ def reset():
     board.exit()
 
 
-def run():
+def run(): # this is the main code
     board = pyfirmata.Arduino(arduino_port)
     servo_bottom = board.get_pin("d:{}:s".format(servo_bottom_pin))  # bottom servo
     servo_left = board.get_pin("d:{}:s".format(servo_left))  # left servo

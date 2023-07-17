@@ -1,15 +1,12 @@
-from flask import Flask, request, redirect, render_template, url_for
+from flask import Flask, redirect, render_template, url_for
 import services.arduino_service as AS
 from controller.movement import movement
-from flask_debugtoolbar import DebugToolbarExtension
-
 app = Flask(__name__)
 
 app.secret_key = "1"
-app.debug = True
+app.debug = False # Debug setting
 
 
-toolbar = DebugToolbarExtension(app)
 
 @app.route("/")
 def index():
