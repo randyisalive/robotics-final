@@ -20,10 +20,10 @@ servo_claw_pin = 10
 
 def reset():
     board = pyfirmata.Arduino(arduino_port)
-    servo_bottom = board.get_pin("d:13:s")  # bottom servo
-    servo_left = board.get_pin("d:12:s")  # left servo
-    servo_right = board.get_pin("d:11:s")  # right servo
-    servo_claw = board.get_pin("d:10:s")  # servo claw
+    servo_bottom = board.get_pin("d:{}:s".format(servo_bottom_pin))  # bottom servo
+    servo_left = board.get_pin("d:{}:s".format(servo_left_pin))  # left servo
+    servo_right = board.get_pin("d:{}:s".format(servo_right_pin))  # right servo
+    servo_claw = board.get_pin("d:{}:s".format(servo_claw_pin))  # servo claw
     servo_bottom.write(90)
     print("Bottom to 90")
     servo_left.write(90)
