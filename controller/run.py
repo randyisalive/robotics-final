@@ -1,5 +1,5 @@
 from flask import Blueprint, redirect, url_for, render_template, request, session
-from services.arduino_service import turn, reset, run
+import services.arduino_service as ardSer
 import pyfirmata
 
 run = Blueprint('run', __name__)
@@ -18,5 +18,5 @@ def index():
     servo_right = board.get_pin("d:11:s")  # right servo
     servo_claw = board.get_pin("d:10:s")  # servo claw
 
-    run()
-    return redirect(url_for('app.index'))
+    ardSer.run()
+    return redirect(url_for('index'))
